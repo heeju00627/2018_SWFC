@@ -1,6 +1,10 @@
 # 2018_SWFC
 2018_SWFC
 
+## 0. 폴더 관리
+1.       과제 목록 Wiki에 정리 예정
+2.       Set00_mmdd 폴더 - pX(문제 번호) 폴더 - x_branchname(nickname).cpp 
+
 ## 1. Git 설치 (Windows)
 1.	https://git-for-windows.github.io/에 접속하여 다운로드 및 설치
 2.	git bash 실행
