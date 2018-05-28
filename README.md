@@ -1,7 +1,6 @@
 # 2018_SWFC
 2018_SWFC
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 ## 0. 폴더 관리
 1.	과제 목록 Wiki에 정리 예정
@@ -64,7 +63,3 @@ $ git merge branchname</code></pre>
 * https://backlog.com/git-tutorial/kr/
 * https://legacy.gitbook.com/book/mylko72/git/details
 * https://medium.com/@joongwon/git-git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC-c25b421ecdbd
-=======
->>>>>>> parent of 08f2f7b... manual
-=======
->>>>>>> parent of 08f2f7b... manual
