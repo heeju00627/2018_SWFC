@@ -1,58 +1,58 @@
 # 2018_SWFC
 2018_SWFC
 
-## 1. Git ì„¤ì¹˜ (Windows)
-1.	https://git-for-windows.github.io/ì— ì ‘ì†í•˜ì—¬ ë‹¤ìš´ë¡œë“œ ë° ì„¤ì¹˜
-2.	git bash ì‹¤í–‰
-3.	ì‘ì—…í•  ë””ë ‰í† ë¦¬ë¡œ ì´ë™ (ex : $cd project)
-4.	git ì‚¬ìš©ì ì„¤ì •
+## 1. Git ¼³Ä¡ (Windows)
+1.	https://git-for-windows.github.io/¿¡ Á¢¼ÓÇÏ¿© ´Ù¿î·Îµå ¹× ¼³Ä¡
+2.	git bash ½ÇÇà
+3.	ÀÛ¾÷ÇÒ µğ·ºÅä¸®·Î ÀÌµ¿ (ex : $cd project)
+4.	git »ç¿ëÀÚ ¼³Á¤
 <pre><code>$ git config --global user.name "name"
 $ git config --global user.email "email"</code></pre>
-5.	ì €ì¥ì†Œ ë³µì œí•´ì„œ ì‘ì—… ë””ë ‰í† ë¦¬ ë§Œë“¤ê¸°
-<pre><code>$ git clone /ë¡œì»¬/ì €ì¥ì†Œ/ê²½ë¡œ</code></pre>
+5.	ÀúÀå¼Ò º¹Á¦ÇØ¼­ ÀÛ¾÷ µğ·ºÅä¸® ¸¸µé±â
+<pre><code>$ git clone /·ÎÄÃ/ÀúÀå¼Ò/°æ·Î</code></pre>
 
 
-## 2. ì‘ì—… íë¦„
-1.	í˜„ì¬ git ê´€ë¦¬ ìƒíƒœ í™•ì¸
+## 2. ÀÛ¾÷ Èå¸§
+1.	ÇöÀç git °ü¸® »óÅÂ È®ÀÎ
 <pre><code>$ git status</code></pre>
-2.	í˜„ì¬ ë””ë ‰í† ë¦¬ì— ìˆëŠ” íŒŒì¼ì„ stage ì˜ì—­ìœ¼ë¡œ ì´ë™
-<pre><code>$ git add . 	(ëª¨ë“  ì¶”ê°€/ìˆ˜ì •ëœ íŒŒì¼)</code></pre>
-<pre><code>$ git add filename (íŠ¹ì • íŒŒì¼)</code></pre>
-3.	íŒŒì¼ì„ stage ì˜ì—­ì—ì„œ ì œê±°
+2.	ÇöÀç µğ·ºÅä¸®¿¡ ÀÖ´Â ÆÄÀÏÀ» stage ¿µ¿ªÀ¸·Î ÀÌµ¿
+<pre><code>$ git add . 	(¸ğµç Ãß°¡/¼öÁ¤µÈ ÆÄÀÏ)</code></pre>
+<pre><code>$ git add filename (Æ¯Á¤ ÆÄÀÏ)</code></pre>
+3.	ÆÄÀÏÀ» stage ¿µ¿ª¿¡¼­ Á¦°Å
 <pre><code>$ git rm --cached filename</code></pre>
-4.	stage ì˜ì—­ì˜ íŒŒì¼ì„ commit (Local repositoryì— ì €ì¥)
+4.	stage ¿µ¿ªÀÇ ÆÄÀÏÀ» commit (Local repository¿¡ ÀúÀå)
 <pre><code>$ git commit -m "commit message"</code></pre>
-5.	commitëœ ë‚´ìš©ì„ push (Remote repositoryë¡œ ì „ì†¡)
+5.	commitµÈ ³»¿ëÀ» push (Remote repository·Î Àü¼Û)
 <pre><code>$ git push origin master</code></pre>
 
 
-## 3. ë¸Œëœì¹˜
-* ë…ë¦½ê°œë°œ ì§€ì›
-* commitì„ ì´ë™í•  ìˆ˜ ìˆëŠ” í¬ì¸í„° ê°™ì€ ê²ƒ.
-* ê¸°ë³¸ì ìœ¼ë¡œ master ë¸Œëœì¹˜ ë§Œë“¤ì–´ì„œ ë§ˆì§€ë§‰ ì»¤ë°‹ì„ ê°€ë¦¬í‚´.
-* master ë¸Œëœì¹˜ëŠ” ê°œë°œì´ ì™„ë£Œë˜ê³  í•©ì³ì§€ëŠ” ê³³ì´ë¯€ë¡œ, ê°œê°œì¸ ë³„ ë¸Œëœì¹˜ ìƒì„±í•´ì„œ ê°œë°œ.
-1.	ë¸Œëœì¹˜ ìƒì„±
+## 3. ºê·£Ä¡
+* µ¶¸³°³¹ß Áö¿ø
+* commitÀ» ÀÌµ¿ÇÒ ¼ö ÀÖ´Â Æ÷ÀÎÅÍ °°Àº °Í.
+* ±âº»ÀûÀ¸·Î master ºê·£Ä¡ ¸¸µé¾î¼­ ¸¶Áö¸· Ä¿¹ÔÀ» °¡¸®Å´.
+* master ºê·£Ä¡´Â °³¹ßÀÌ ¿Ï·áµÇ°í ÇÕÃÄÁö´Â °÷ÀÌ¹Ç·Î, °³°³ÀÎ º° ºê·£Ä¡ »ı¼ºÇØ¼­ °³¹ß.
+1.	ºê·£Ä¡ »ı¼º
 <pre><code>$ git branch branchname</code></pre>
-2.	ë¸Œëœì¹˜ ì´ë™
+2.	ºê·£Ä¡ ÀÌµ¿
 <pre><code>$ git checkout branchname</code></pre>
-3.	ë¸Œëœì¹˜ ìƒì„±ê³¼ ì´ë™(checkout)ì„ í•œë²ˆì—
+3.	ºê·£Ä¡ »ı¼º°ú ÀÌµ¿(checkout)À» ÇÑ¹ø¿¡
 <pre><code>$ git checkout -b branchname</code></pre>
-4.	ë¸Œëœì¹˜ í™•ì¸
-<pre><code>$ git branch (*ì´ ë¶™ì–´ìˆëŠ” ê²ƒì´ í˜„ì¬ ì„ íƒëœ ë¸Œëœì¹˜)</code></pre>
-5.	ë¸Œëœì¹˜ ë³‘í•© : ê°ê° commitì„ ì§„í–‰í–ˆê³ , ì„œë¡œ ê²¹ì¹˜ê²Œ ìˆ˜ì •í•œ íŒŒì¼ì´ ì—†ì„ ë•Œ
-			master ë¸Œëœì¹˜ë¡œ ë³‘í•©í•˜ê¸° ìœ„í•œ ëª…ë ¹ì–´ë“¤
+4.	ºê·£Ä¡ È®ÀÎ
+<pre><code>$ git branch (*ÀÌ ºÙ¾îÀÖ´Â °ÍÀÌ ÇöÀç ¼±ÅÃµÈ ºê·£Ä¡)</code></pre>
+5.	ºê·£Ä¡ º´ÇÕ : °¢°¢ commitÀ» ÁøÇàÇß°í, ¼­·Î °ãÄ¡°Ô ¼öÁ¤ÇÑ ÆÄÀÏÀÌ ¾øÀ» ¶§
+			master ºê·£Ä¡·Î º´ÇÕÇÏ±â À§ÇÑ ¸í·É¾îµé
 <pre><code>$ git checkout master
 $ git merge branchname</code></pre>
-6.	ë¸Œëœì¹˜ ë³‘í•© ì·¨ì†Œ(master branchì— ëŒ€í•´) ìˆ˜í–‰ :		
-<pre><code>$ git reset --hard HEAD (ì¶©ëŒì´ ë°œìƒí•˜ì—¬ ì·¨ì†Œí•˜ëŠ” ê²½ìš°)</code></pre>
-<pre><code>$ git reset --hard ORIG_HEAD (ë³‘í•© ì´í›„ì— ë³‘í•© ì·¨ì†Œí•˜ëŠ” ê²½ìš°)</code></pre>
+6.	ºê·£Ä¡ º´ÇÕ Ãë¼Ò(master branch¿¡ ´ëÇØ) ¼öÇà :		
+<pre><code>$ git reset --hard HEAD (Ãæµ¹ÀÌ ¹ß»ıÇÏ¿© Ãë¼ÒÇÏ´Â °æ¿ì)</code></pre>
+<pre><code>$ git reset --hard ORIG_HEAD (º´ÇÕ ÀÌÈÄ¿¡ º´ÇÕ Ãë¼ÒÇÏ´Â °æ¿ì)</code></pre>
 
 
-## 4. í•„ìš” ëª…ë ¹ì–´(cont.)
-1.	ì»¤ë°‹ íˆìŠ¤í† ë¦¬ ì¡°íšŒ
+## 4. ÇÊ¿ä ¸í·É¾î(cont.)
+1.	Ä¿¹Ô È÷½ºÅä¸® Á¶È¸
 <pre><code>$ git log</code></pre>
 
 
-## 5. ì°¸ê³  ì‚¬ì´íŠ¸
+## 5. Âü°í »çÀÌÆ®
 * https://backlog.com/git-tutorial/kr/
 * https://legacy.gitbook.com/book/mylko72/git/details
