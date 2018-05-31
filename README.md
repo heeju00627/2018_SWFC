@@ -4,7 +4,7 @@
 
 ## 0. 폴더 관리
 1.	과제 목록 Wiki에 정리 예정
-2.	Set00_mmdd 폴더 - pX(문제 번호) 폴더 - x_branchname or nickname.cpp
+2.	각자 폴더 생성(name) - 문제번호_name.cpp
  
 
 ## 1. Git 설치 (Windows)
