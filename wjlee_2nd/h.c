@@ -28,7 +28,6 @@ int temp_dequeue(int *x, int *y)
 	if (temp_tail > 1300000) temp_tail = 0;
 	return 0;
 }
-
 int enqueue(int x, int y)
 {
 	queue[head][0] = x;
@@ -46,7 +45,13 @@ int dequeue(int *x, int *y)
 	return 0;
 }
 
+/***** Queue의 Enqueue, Dequeue 함수 구현 완료 *****/
+
 int infection(int x, int y, char att)
+/*
+견우나 직녀가 있는 덩어리와 일반 덩어리가 만났을 때
+일반 덩어리를 견우/직녀 덩어리로 감염시키는 함수
+*/
 {
 	char att_cap = att - ('a' - 'A');
 	int i, j;
@@ -76,6 +81,11 @@ int infection(int x, int y, char att)
 }
 
 int bfs_setting(int x, int y, char c)
+/*
+처음 견우/직녀 덩어리와 일반 덩어리를 a, b, z로 채우고
+벽에 붙어있는 것들을 대문자로 바꾸면서 Enqueue 하는
+초기 세팅 함수
+*/
 {
 	char c_cap = c - ('a' - 'A');
 	int i, j;
@@ -96,6 +106,9 @@ int bfs_setting(int x, int y, char c)
 	return 0;
 }
 int check(int x, int y)
+/*
+현재 점에서 견우와 직녀가 만났는지 검사하는 함수
+*/
 {
 	int i;
 	for (i=0; i<4; i++){
@@ -107,6 +120,9 @@ int check(int x, int y)
 }
 
 int bfs()
+/*
+덩어리들이 커지는 메인 solve 함수(BFS)
+*/
 {
 	int i, j, x, y, cnt=1;
 	char temp_c;
@@ -119,6 +135,7 @@ int bfs()
 				for (j=0; j<4; j++){
 					if ((sky[queue[i][1]][queue[i][0]] == 'A' || sky[queue[i][1]][queue[i][0]] == 'B' || sky[queue[i][1]][queue[i][0]] == 'a' || sky[queue[i][1]][queue[i][0]] == 'b') 
 							&& (sky[queue[i][1]+dy[j]][queue[i][0]+dx[j]] == 'Z' || sky[queue[i][1]+dy[j]][queue[i][0]+dx[j]] == 'z')){
+						// 현재가 견우직녀 덩어리이고 옆이 일반 덩어리라면 => 감염시키기 위함임
 						if (sky[queue[i][1]][queue[i][0]] == 'A' || sky[queue[i][1]][queue[i][0]] == 'B') temp_c = sky[queue[i][1]][queue[i][0]]+('a'-'A');
 						else temp_c = sky[queue[i][1]][queue[i][0]];
 						infection(queue[i][0]+dx[j], queue[i][1]+dy[j], temp_c);
@@ -126,6 +143,7 @@ int bfs()
 				}
 			}
 			for (i=tail; i<=head; i++){
+				// 큐의 내용을 보면서 견우와 직녀가 만났는지 체크
 				if (check(queue[i][0], queue[i][1]))
 					return cnt;
 			}
@@ -134,15 +152,18 @@ int bfs()
 		dequeue(&x, &y);
 		for (i = 0; i < 4; i++){
 			if ((sky[y][x] == 'A' && (sky[y + dy[i]][x + dx[i]] == 'B' || sky[y + dy[i]][x + dx[i]] == 'b')) || (sky[y][x] == 'B' && (sky[y + dy[i]][x + dx[i]] == 'A' || sky[y + dy[i]][x + dx[i]] == 'a'))){
+				// 견우와 직녀가 만났으면 종료
 				return cnt;
 			}
 			if (sky[y + dy[i]][x + dx[i]] == 'X' || ((sky[y][x] == 'A' || sky[y][x] == 'B') && (sky[y+dy[i]][x+dx[i]] == 'Z' || sky[y+dy[i]][x+dx[i]] == 'z'))){
+				// 빈공간이면 => 현재문자로 채움 || 현재가 견우직녀덩어리이면서 옆이 일반덩어리라면 => 견우직녀덩어리(현재문자)로 채움
 				sky[y + dy[i]][x + dx[i]] = sky[y][x];
 				enqueue(x + dx[i], y + dy[i]);
 			}
 		}
 		if (sky[y][x] >= 'A' && sky[y][x] <= 'Z' && sky[y][x] != 'L')
 			sky[y][x] += ('a'-'A');
+		// 자신의 4방향 모두 검사 했으므로 자신은 필요없어짐 => 소문자로 전환
 	}
 	return cnt;
 }
@@ -173,6 +194,7 @@ int main()
 		sky[0][i] = 'I';
 		sky[r + 1][i] = 'I';
 	}
+	/* sky 기본 입력 완료 */
 
 	bfs_setting(ax, ay, 'a');
 	bfs_setting(bx, by, 'b');
@@ -186,6 +208,7 @@ int main()
 	}
 	head = 0;
 	tail = 0;
+	/* sky 문자 채우기 완료 */
 
 	for (i = 1; i <= r; i++){
 		for (j = 1; j <= c; j++){
@@ -201,7 +224,8 @@ int main()
 			}
 		}
 	}
-	// finish setting
+	/* sky 대문자 Enqueue 완료
+	& finish setting */
 
 	printf ("%d", bfs());
 
